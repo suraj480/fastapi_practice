@@ -208,6 +208,33 @@ def create_user_with_address(user: UserWithAddress):
     }
 
 
+class UserResponse(BaseModel):
+    name: str
+    age: int
+
+@app.get("/get-user-response", response_model=UserResponse)
+def get_UserReponse():
+    """
+    Response Model Example
+
+    Output
+
+    {
+        "name": "Suraj",
+        "age": 25,
+        "address": {
+            "city": "Mumbai",
+            "state": "Maharashtra",
+            "pincode": "400001"
+        }
+    }
+    """
+
+    return {
+        "name": "Suraj",
+        "age": 25,
+        "password":1234
+    }
 # =======================================================
 # END OF FILE
 # =======================================================
